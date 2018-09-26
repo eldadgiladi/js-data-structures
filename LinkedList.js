@@ -44,7 +44,7 @@ class LinkedList {
             return new Error(`list must contain at least 1 argument`)
         }
         newTail.next = null;
-        _tail.set(this,newTail);
+        _tail.set(this, newTail);
         return oldTail.value;
     }
 
@@ -58,25 +58,39 @@ class LinkedList {
         return length;
     }
 
-    toString(){
+    toString() {
         let node = _head.get(this);
         let string = '';
-        while(node.next !== null){
-            string += node.value+', '
+        while (node.next !== null) {
+            string += node.value + ', '
             node = node.next;
         }
         string += node.value
         return string;
     }
 
-    search(val){
+    search(val) {
         let node = _head.get(this)
-        while(node !== null){
-            if(node.value === val) return true;
+        while (node !== null) {
+            if (node.value === val) return true;
             node = node.next;
         }
         return false;
     }
+
+    indexesOf(val) {
+        let node = _head.get(this)
+        const indexesArray = []
+        let counter = 0;
+        while (node !== null) {
+            if (node.value === val) indexesArray.push(counter)
+            counter++;
+            node = node.next;
+        }
+        return indexesArray;
+    }
+
+    
 
 }
 

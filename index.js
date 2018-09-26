@@ -1,20 +1,17 @@
-const LinkedList = require('./LinkedList');
-
-const ll = new LinkedList(5)
-
-ll.addToHead(4)
-ll.addToTail(6)
-ll.addToHead(3)
-ll.addToTail(7)
-console.log(ll.search(6));
-console.log(ll.toString());
-ll.removeHead()
-ll.removeHead()
-ll.removeHead()
-ll.removeTail()
-ll.removeTail()
-console.log(ll.toString());
-console.log(ll.search(7));
+const BST =  require('./BST');
 
 
 
+
+const bst = new BST(100);
+bst.insert(10);
+bst.insert(20);
+bst.insert(800);
+bst.insert(75);
+bst.insert(19);
+
+console.log('====================================');
+console.log(bst.value);
+console.log('====================================');
+
+bst.breadthFirstTraversal()
