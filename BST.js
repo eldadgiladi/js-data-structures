@@ -53,8 +53,20 @@ class BST {
         }
 
     }
-    toString() {
 
+    getMinVal() {
+        if (this.left) return this.left.getMinVal();
+        return this.value;
+    }
+
+
+    getMaxVal(){
+        if (this.right) return this.right.getMinVal();
+        return this.value;
+    }
+
+    toString() {
+        
     }
 }
 
